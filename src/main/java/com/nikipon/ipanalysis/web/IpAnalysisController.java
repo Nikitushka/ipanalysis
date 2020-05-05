@@ -65,7 +65,7 @@ public class IpAnalysisController {
 		
 		Ipdata ipdata = new Ipdata(ip, location, isp, userAgent, port, user);
 		
-		model.addAttribute("data", iprepo.findByUsern(user));
+		model.addAttribute("data", ipdata);
 		return "data";
 	}
 	
