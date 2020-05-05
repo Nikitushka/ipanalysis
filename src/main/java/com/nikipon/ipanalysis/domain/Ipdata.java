@@ -38,6 +38,26 @@ public Ipdata(String ip, String location, String isp, String userAgent, int conn
 }
 
 
+public String getUserAgent() {
+	return userAgent;
+}
+
+
+public void setUserAgent(String userAgent) {
+	this.userAgent = userAgent;
+}
+
+
+public Client getClient() {
+	return client;
+}
+
+
+public void setClient(Client client) {
+	this.client = client;
+}
+
+
 public void setUsern(String usern) {
 	this.usern = usern;
 }
