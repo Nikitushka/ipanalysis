@@ -97,10 +97,9 @@ public class IpAnalysisController {
 		JSONParser parse = new JSONParser();
 		
 		JSONObject result = (JSONObject) parse.parse(inline);
-		JSONObject main = (JSONObject) result.get("main");
 		
-		String isp = (String) main.get("org");
-		String location = (String) main.get("city")+ ", " + (String) main.get("country");
+		String isp = (String) result.get("org");
+		String location = (String) result.get("city")+ ", " + (String) result.get("country");
 		
 		data.add(isp);
 		data.add(location);
