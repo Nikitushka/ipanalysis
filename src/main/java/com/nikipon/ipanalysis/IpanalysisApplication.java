@@ -22,10 +22,15 @@ public class IpanalysisApplication {
 	public CommandLineRunner book(ClientRepository urepo) {
 		return (args) -> {
 			log.info("TEST");
-//			Client admin = new Client("admin", "$2y$12$nKgLT6EzFKKRM2AQ/d1FouZJ469kbSJGWEMSM3Dx8jb53W1fCfPma", "admin@app.com", "ADMIN");
-//			Client client = new Client("user", "$2y$12$d.0pg9NArxtZ5yMFAD.R9egDFmlxxdHnkCoW952fDdCISn88O7KlK", "test@email.com", "USER");
-//			urepo.save(client);
-//			urepo.save(admin);
+		
+			if(urepo.findByUsername("admin") == null) {
+				Client admin = new Client("admin", "$2y$12$nKgLT6EzFKKRM2AQ/d1FouZJ469kbSJGWEMSM3Dx8jb53W1fCfPma", "admin@app.com", "ADMIN");
+				urepo.save(admin);
+			}
+			if(urepo.findByUsername("user") == null) {
+		Client client = new Client("user", "$2y$12$d.0pg9NArxtZ5yMFAD.R9egDFmlxxdHnkCoW952fDdCISn88O7KlK", "test@email.com", "USER");
+		urepo.save(client);
+			}
 		};
 }
 }
