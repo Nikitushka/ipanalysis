@@ -53,7 +53,7 @@ public class IpAnalysisController {
 		String user = request.getRemoteUser();
 		
 		int port = request.getRemotePort();
-		String userAgent = request.getHeader("User-Agent");
+		String userAgent = "niktia";//request.getHeader("User-Agent");
 		String ip = request.getHeader("X-FORWARDED-FOR");  
 		if (ip == null) {  
 		    ip = request.getRemoteAddr();  
