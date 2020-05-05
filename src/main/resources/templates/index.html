@@ -1,0 +1,51 @@
+<html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<title>Welcome!</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css"
+	th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+	<div class="container">
+		<div class="col-md-4">
+			<h3>Welcome to my IP data collection application!</h3>
+		</div>
+	</div>
+	<div>
+		<h3 class="text-center">A couple of things before we get started:</h3>
+		<p class="text-center">
+
+			This is a project made by Nikita Ponomarev for the Server Programming
+			course during Spring of 2020 taught by Jukka Juslin <br /> The
+			purpose of this project is to:
+
+		</p>
+		<ul class="text-center list-unstyled">
+
+			<li>1. Demonstrate the data that can be collected through users
+				public ip-address just by visiting a website</li>
+			<li>2. Use a semi-custom back-end that stores user credentials
+				and data collected in a database that is cleared once in an hour</li>
+			<li>3. Provide an API for registered users where they could use
+				the data that was collected (not really recommended)</li>
+
+		</ul>
+	</div>
+
+	<br />
+	<br />
+
+	<p class="text-center">Please select one of these options:</p>
+
+	<div class="container">
+		<div class="row">
+			<div class="col text-center">
+				<a th:href="@{login}" class="btn btn-primary">Log in</a>
+				<a th:href="@{register}" class="btn btn-success">Register</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

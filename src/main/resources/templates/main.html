@@ -1,0 +1,29 @@
+<html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<title>WARNING</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+	<div>
+	<h2 class="text-danger text-center">WARNING</h2>
+	<h3 class="text-danger text-center">
+		
+		By pressing "I agree" you consent to proceeding to the main page and to the fact that your information <br />
+		like IP address, ISP, browser name and location will be stored on this website. <br />
+		You consent that by registering on this website, the aforementioned information will be stored in a database for one (1) hour and any information you share must not be something that is not publicly available. <br /><br />
+		DO NOT USE A PASSWORD YOU USE ANYWHERE ELSE WHEN REGISTERING ON THIS SITE <br /><br />
+		ANY INFORMATION LEAKAGE THAT MAY OCCUR MUST NOT CONTAIN REAL CREDENTIALS USED BY YOU ANYWHERE ELSE <br /><br /><br />
+
+	</h3>
+	</div>
+		<div class="container">
+		<div class="row">
+			<div class="col text-center">
+	<a th:href="@{/index}" class="btn btn-success btn-lg">I agree</a>
+	</div>
+	</div>
+	</div>
+</body>
+</html>

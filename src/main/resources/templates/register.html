@@ -1,0 +1,50 @@
+<html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<title>Register</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css"
+	th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+	<div>
+		<h2 class="text-danger">Register</h2>
+	</div>
+	<div class="col-md-4">
+		<form th:object="${signupform}" th:action="@{/registeruser}"
+			action="#" method="post">
+			<div>
+				<label for="username">Username: <input type="text"
+					id="username" th:field="*{username}" class="form-control" />
+				</label>
+				<p th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Username
+					error</p>
+			</div>
+			<div>
+				<label for="password">Password: <input type="password"
+					id="password" th:field="*{password}" class="form-control" />
+				</label>
+				<p th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password
+					error</p>
+			</div>
+			<div>
+				<label for="confirmPassword">Confirm Password: <input
+					type="password" id="confirmPassword" th:field="*{confirmPassword}"
+					class="form-control" />
+				</label>
+				<p th:if="${#fields.hasErrors('confirmPassword')}"
+					th:errors="*{confirmPassword}">confirmPassword error</p>
+			</div>
+			<div>
+				<label for="email">Email: <input type="text" id="email"
+					th:field="*{email}" class="form-control" />
+				</label>
+				<p th:if="${#fields.hasErrors('email')}" th:errors="*{email}">
+					Email error</p>
+			</div>
+			<input type="submit" class="btn btn-primary" value="Register"></input>
+		</form>
+	</div>
+</body>
+</html>
