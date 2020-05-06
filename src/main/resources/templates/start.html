@@ -19,6 +19,7 @@
 		<div class="row">
 			<div class="col text-center">
 				<a th:href="@{/data}" class="btn btn-primary btn-lg">Start</a>
+				<br />
 				<p sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/admin}"
 				class="btn btn-success">Admin Panel</a></p>
 			</div>
