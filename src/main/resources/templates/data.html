@@ -11,12 +11,18 @@
 	</div>
 		<div class="container">
 		<h4>Your results:</h4>
-		<label>You IP: <p th:text="${data.ip}"></p></label>
-		<label>Your approximate location: <p th:text="${data.location}"></p></label>
-		<label>Your ISP: <p th:text="${data.isp}"></p></label>
-		<label>User-Agent: <p th:text="${data.userAgent}"></p></label>
-		<label>You are connected through port <p th:text="${data.connectedPort}"></p></label><br />
-		<label>Current user: <p th:text="${data.usern}"></p></label>
+		<label for="ip">You IP: </label>
+		<p id="ip" th:text="${data.ip}"></p>
+		<label for="loc">Your approximate location: </label
+		><p id="loc" th:text="${data.location}"></p>
+		<label for="isp">Your ISP: </label>
+		<p id="isp" th:text="${data.isp}"></p>
+		<label for="ua">User-Agent: </label>
+		<p id="ua" th:text="${data.userAgent}"></p>
+		<label for="port">You are connected through port </label>
+		<p id="port" th:text="${data.connectedPort}"></p><br />
+		<label for="user">Current user: </label>
+		<p id="user" th:text="${data.usern}"></p>
 		
 		<br /><br />
 		<h4>Thank you for participating!</h4>
