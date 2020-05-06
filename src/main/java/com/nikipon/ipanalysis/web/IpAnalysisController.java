@@ -69,8 +69,8 @@ public class IpAnalysisController {
 		}
 		
 		ArrayList<String> ispAndLocData = grabIpData(ip);
-		String location = ispAndLocData.get(0); 
-		String	isp = ispAndLocData.get(1);
+		String location = ispAndLocData.get(1); 
+		String	isp = ispAndLocData.get(0);
 		
 		Ipdata ipdata = new Ipdata(ip, location, isp, userAgent, port, user);
 		iprepo.save(ipdata);
