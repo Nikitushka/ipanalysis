@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -46,6 +47,14 @@ public class IpAnalysisController {
 	public String start() {
 		return "start";
 	}	
+	
+    @PreAuthorize("hasAuthority('ADMIN')")
+	@GetMapping("/admin")
+	public String adminView(Model model) {
+		
+		model.addAttribute("data", iprepo.findAll());
+		return "admin";
+	}
 	
 	// on redirect, collect user ip-data if user is not found in db
 	@GetMapping("/data")
@@ -114,12 +123,7 @@ public class IpAnalysisController {
 		return data;
 	}
 	
-	@GetMapping("/admin")
-	public String adminView(Model model) {
-		
-		model.addAttribute("data", iprepo.findAll());
-		return "admin";
-	}
+
 	
 	
 }
