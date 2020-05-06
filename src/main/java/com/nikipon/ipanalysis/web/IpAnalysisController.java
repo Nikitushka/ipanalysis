@@ -64,7 +64,7 @@ public class IpAnalysisController {
 		String	isp = ispAndLocData.get(1);
 		
 		Ipdata ipdata = new Ipdata(ip, location, isp, userAgent, port, user);
-		if (iprepo.findByUsern(user) == null) {
+		if (iprepo.findByIp(ip) == null) {
 		iprepo.save(ipdata);
 		}
 		model.addAttribute("data", ipdata);

@@ -37,6 +37,9 @@ public Ipdata(String ip, String location, String isp, String userAgent, int conn
 	this.usern = usern;
 }
 
+public Ipdata() {
+
+}
 
 public String getUserAgent() {
 	return userAgent;
