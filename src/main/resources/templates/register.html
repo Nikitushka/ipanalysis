@@ -4,14 +4,18 @@
 <head>
 <title>Register</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css"
 	th:href="@{/css/bootstrap.min.css}" />
 </head>
 <body>
+	
 	<div>
 		<h2 class="text-danger">Register</h2>
 	</div>
+	
 	<div class="col-md-4">
+		
 		<form th:object="${signupform}" th:action="@{/registeruser}"
 			action="#" method="post">
 			<div>

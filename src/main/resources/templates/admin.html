@@ -1,0 +1,40 @@
+<html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<title>Admin</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css"
+	th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+	<div>
+		<h4 class="text-danger text-center">
+			<br /> Admin Space
+		</h4>
+		<br />
+	</div>
+	<div class="container"></div>
+		<table class="table table-striped">
+		<tr>
+			<th>IP</th>
+			<th>Location</th>
+			<th>ISP</th>
+			<th>User-Agent</th>
+			<th>Connected Port</th>
+			<th>User</th>
+		</tr>
+		<tr th:each="ipdata : ${data}">
+			<td th:text="${ipdata.ip}"></td>
+			<td th:text="${ipdata.location}"></td>
+			<td th:text="${ipdata.isp}"></td>
+			<td th:text="${ipdata.userAgent}"></td>
+			<td th:text="${ipdata.connectedPort}"></td>
+			<td th:text="${ipdata.usern}"></td>
+
+		</tr>
+	</table>
+	</div>
+	</div>
+</body>
+</html>

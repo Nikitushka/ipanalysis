@@ -114,5 +114,12 @@ public class IpAnalysisController {
 		return data;
 	}
 	
+	@GetMapping("/admin")
+	public String adminView(Model model) {
+		
+		model.addAttribute("data", iprepo.findAll());
+		return "admin";
+	}
+	
 	
 }

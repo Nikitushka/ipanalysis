@@ -11,7 +11,7 @@
 	</div>
 		<div class="container">
 		<h4>Your results:</h4>
-		<label for="ip">You IP: </label>
+		<label for="ip">Your IP: </label>
 		<p id="ip" th:text="${data.ip}"></p>
 		<label for="loc">Your approximate location: </label
 		><p id="loc" th:text="${data.location}"></p>
@@ -19,8 +19,8 @@
 		<p id="isp" th:text="${data.isp}"></p>
 		<label for="ua">User-Agent: </label>
 		<p id="ua" th:text="${data.userAgent}"></p>
-		<label for="port">You are connected through port </label>
-		<p id="port" th:text="${data.connectedPort}"></p><br />
+		<label for="port">You are connected through port: </label>
+		<p id="port" th:text="${data.connectedPort}"></p>
 		<label for="user">Current user: </label>
 		<p id="user" th:text="${data.usern}"></p>
 		
