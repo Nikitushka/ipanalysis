@@ -20,6 +20,8 @@ public class IpanalysisApplication {
 		SpringApplication.run(IpanalysisApplication.class, args);
 	}
 	
+	// initialize bean commandlinerunner, if the admin and test user are not in the database
+	// then insert their information
 	@Bean
 	public CommandLineRunner book(ClientRepository urepo) {
 		return (args) -> {

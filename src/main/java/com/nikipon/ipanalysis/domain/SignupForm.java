@@ -23,6 +23,8 @@ public class SignupForm {
     @NotEmpty
     private String role = "USER";
     
+    // regex that checks for a semi-valid email format
+    
     @Pattern(regexp = "^[A-Za-z0-9+_.-]+@(.+)$")
     private String email = "";
     

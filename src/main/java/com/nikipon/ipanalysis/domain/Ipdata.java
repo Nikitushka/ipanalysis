@@ -9,6 +9,8 @@ import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+// object for the data we collect
+
 @Entity
 public class Ipdata {
 	

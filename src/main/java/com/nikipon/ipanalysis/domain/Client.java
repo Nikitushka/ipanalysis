@@ -2,6 +2,8 @@ package com.nikipon.ipanalysis.domain;
 
 import javax.persistence.*;
 
+// The user object
+
 @Entity
 public class Client {
 	

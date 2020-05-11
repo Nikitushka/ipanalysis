@@ -3,7 +3,6 @@ package com.nikipon.ipanalysis.web;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 import javax.servlet.http.HttpServletRequest;
@@ -16,38 +15,39 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.nikipon.ipanalysis.domain.ClientRepository;
 import com.nikipon.ipanalysis.domain.Ipdata;
 import com.nikipon.ipanalysis.domain.IpdataRepository;
 
 @Controller
 public class IpAnalysisController {
 	@Autowired
-	private ClientRepository urepo;
-	@Autowired
 	private IpdataRepository iprepo;
 	
-	// Display the index page
+	// Display the warning page
 	@GetMapping("/")
 	public String main() {
 		return "main";
 	}
 	
+	// display the index page with the options to login or register
 	@GetMapping("/index")
 	public String index() {
 		return "index";
 	}	
     
+	// login page
 	@GetMapping("/login")
     public String login() {	
         return "login";
     }
 	
+	// the prompt to start collecting user data
 	@GetMapping("/start")
 	public String start() {
 		return "start";
 	}	
 	
+	// admin panel with all of the ip data
     @PreAuthorize("hasAuthority('ADMIN')")
 	@GetMapping("/admin")
 	public String adminView(Model model) {
@@ -56,7 +56,7 @@ public class IpAnalysisController {
 		return "admin";
 	}
 	
-	// on redirect, collect user ip-data if user is not found in db
+	// on redirect, collect user ip-data
 	@GetMapping("/data")
 	public String data(HttpServletRequest request, Model model) {
 		String user = request.getRemoteUser();

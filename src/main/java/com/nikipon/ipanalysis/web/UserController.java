@@ -20,6 +20,7 @@ public class UserController {
 	@Autowired
 	private ClientRepository urepo;
 	
+	// display register page
 	@GetMapping("register")
 	public String addUser(Model model) {
 		model.addAttribute("signupform", new SignupForm());
