@@ -57,7 +57,7 @@ public class UserController {
 		    	}
     		}
     		else {
-    			bindingResult.rejectValue("passwordCheck", "err.passCheck", "Passwords do not match");    	
+    			bindingResult.rejectValue("confirmPassword", "err.confirmPassword", "Passwords do not match");    	
     			return "register";
     		}
     	}
