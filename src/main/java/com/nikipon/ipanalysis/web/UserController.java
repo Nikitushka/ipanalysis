@@ -38,7 +38,8 @@ public class UserController {
     @PostMapping(value = "registeruser")
     public String save(@Valid @ModelAttribute("signupform") SignupForm signupForm, BindingResult bindingResult) {
     	if (!bindingResult.hasErrors()) { // validation errors
-    		if (signupForm.getPassword().equals(signupForm.getConfirmPassword())) { // check password match		
+    		if (signupForm.getPassword().equals(signupForm.getConfirmPassword())) { // check password match
+            	if (signupForm.getEmail().matches("^[A-Za-z0-9+_.-]+@(.+)$")) {
 	    		String passwd = signupForm.getPassword();
 		    	BCryptPasswordEncoder bc = new BCryptPasswordEncoder();
 		    	String hashPasswd = bc.encode(passwd);
@@ -55,14 +56,17 @@ public class UserController {
 	    			bindingResult.rejectValue("username", "err.username", "Username already exists");    	
 	    			return "register";		    		
 		    	}
+    		} else {
+          		bindingResult.rejectValue("email", "err.email", "Incorrect email format");
+        		return "register";
+    		}
     		}
     		else {
     			bindingResult.rejectValue("confirmPassword", "err.confirmPassword", "Passwords do not match");    	
     			return "register";
     		}
     	}
-    	else {
-    		bindingResult.rejectValue("email", "err.email", "Incorrect email format");
+    	 else {
     		return "register";
     	}
     	return "redirect:/login";    	
